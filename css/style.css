@@ -50,5 +50,9 @@ h2{
     width: 80%;
     margin: auto;
     padding: 20px 0;
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
 }
 /* END MAIN */

@@ -48,7 +48,7 @@
                 <!-- End Ticket Generator Form -->
 
                 <!-- Start Buttons -->
-                <button>Genera</button>
+                <button id="generate-button">Genera</button>
                 <button>Annulla</button>
                 <!-- End Buttons -->
 
@@ -61,13 +61,13 @@
             <h2>Il tuo biglietto</h2>
 
             <!-- Start Passenger Details -->
-            <div class="ticket-details">
+            <div id="ticket-visible" class="ticket-details">
                 <h3>Dettaglio passeggeri</h3>
-                <div>Nome passeggero</div>
-                <div>Offerta</div>
-                <div>Carrozza</div>
-                <div>Codice CP</div>
-                <div>Costo biglietto</div>
+                <div>Nome passeggero <span id="ticket-user-name"></span></div>
+                <div>Offerta <span id="ticket-user-offer"></span></div>
+                <div>Carrozza <span id="ticket-user-number"></span></div>
+                <div>Codice CP <span id="ticket-user-code"></span></div>
+                <div>Costo biglietto <span id="ticket-user-price"></span></div>
             </div>
             <!-- End Passenger Details -->
 
