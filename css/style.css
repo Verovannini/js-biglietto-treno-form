@@ -1,0 +1,54 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* END RESET */
+
+/* COMMON */
+/* END COMMON */
+
+/* MAIN */
+body {
+    background-color: #b9154f;
+}
+
+h2{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.ticket-form{
+    background-color: #fff;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+.ticket-generator-form{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ticket-form label{
+    color: #b9154f;
+}
+.ticket-form select,
+.ticket-form input{
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #b9154f;
+    border-radius: 3px;
+}
+
+.ticket-details{
+    background-color: #fff;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+/* END MAIN */
