@@ -8,7 +8,7 @@
 // Se clicchiamo su annulla dobbiamo ripulire il form e nascondere la sezione col biglietto.
 
 // Funzioni generateButton
-// Quando si fa click su generate button comprare il div con il biglietto
+// Quando si fa click su generate button compare il div con il biglietto
 var generateButton = document.getElementById('generate-button');
 generateButton.addEventListener('click', function() {
     // Far apparire il div quando si fa click
@@ -18,14 +18,12 @@ generateButton.addEventListener('click', function() {
     // Prendere il nome dalla value dell'input ticket-generator-name e stamparla in ticket-user-name
     var ticketGeneratorNameElement = document.getElementById('ticket-generator-name');
     var userName = ticketGeneratorNameElement.value;
-    console.log(userName);
 
     document.getElementById('ticket-user-name').innerHTML = userName;
 
     // Prendere la categoria del biglietto dal value del select ticket-generator-age e stamparla in ticket-user-offer
     var ticketGeneratorAgeElement = document.getElementById('ticket-generator-age');
     var userOfferValue = ticketGeneratorAgeElement.value;
-    console.log(userOfferValue);
 
     var userOffer = 'Prezzo base';
     if(userOfferValue == 'minorenne') {
@@ -33,27 +31,33 @@ generateButton.addEventListener('click', function() {
     } else if ( userOfferValue == 'over' ) {
         userOffer = 'Sconto Silver';
     }
-    console.log(userOffer);
 
     document.getElementById('ticket-user-offer').innerHTML = userOffer;
 
     // Generare random number da 1 a 9 per la carrozza e stamparlo in ticket-user-number
     var randomNumberCarrozza = randomNumber(1, 10);
-    console.log(randomNumberCarrozza);
 
     document.getElementById('ticket-user-number').innerHTML = randomNumberCarrozza;
 
     // Generare random number tra 90000 e 100000 escluso per il codice treno e stamparlo in ticket-user-code
     var randomNumberTrain = randomNumber(90000, 100000);
-    console.log(randomNumberTrain);
 
     document.getElementById('ticket-user-code').innerHTML = randomNumberTrain;
 
     // Prendere i km dalla value dell'input ticket-generator-km trasformarli in numero, calcolare il prezzo e stamparlo in ticket-user-price
     var ticketGeneratorKmElement = document.getElementById('ticket-generator-km');
-    var userKm = ticketGeneratorKmElement.value;
-    console.log(userKm);
+    var userKm = parseInt(ticketGeneratorKmElement.value);
 
+    var priceKm = 0.21;
+    var ticketPrice = userKm * priceKm;
+
+    if (userOfferValue == 'minorenne') {
+        ticketPrice = ticketPrice - ( ticketPrice * 0.2 );
+    } else if ( userOfferValue == 'over' ) {
+        ticketPrice = ticketPrice - ( ticketPrice * 0.4 );
+    }
+
+    document.getElementById('ticket-user-price').innerHTML = ticketPrice.toFixed(2) + '€';
 });
 
 // Funzioni cancelButton
