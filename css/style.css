@@ -6,12 +6,10 @@
 }
 /* END RESET */
 
-/* COMMON */
-/* END COMMON */
-
 /* MAIN */
 body {
     background-color: #b9154f;
+    font-family: 'Roboto', sans-serif;
 }
 
 h2{
@@ -21,6 +19,7 @@ h2{
     padding: 20px 0;
 }
 
+/* Form */
 .ticket-form{
     background-color: #fff;
     width: 80%;
@@ -40,12 +39,20 @@ h2{
 .ticket-form select,
 .ticket-form input{
     margin-top: 10px;
-    padding: 5px;
+    padding: 7px;
     border: 1px solid #b9154f;
     border-radius: 3px;
     text-align: center;
 }
 
+.btn{
+    margin: 30px 5px 0 5px;
+    padding: 5px;
+    color: #b9154f;
+    font-size: 16px;
+}
+
+/* Ticket */
 .ticket-details{
     background-color: #fff;
     width: 80%;
@@ -68,12 +75,23 @@ h3{
     border-bottom: 1px solid #808080;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
 }
 
 .ticket-title{
     font-weight: 700;
     font-size: 22px;
     padding-bottom: 40px;
+}
+
+.inner-details{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+.user-name{
+    background-color: #808080;
+    padding: 15px;
+    font-weight: 700;
 }
 /* END MAIN */
