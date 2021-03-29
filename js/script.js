@@ -37,4 +37,26 @@ generateButtonElement.addEventListener('click', function() {
 
     document.getElementById('ticket-user-offer').innerHTML = userOffer;
 
+    // Generare random number da 1 a 9 per la carrozza e stamparlo in ticket-user-number
+    var randomNumberCarrozza = randomNumber(1, 10);
+    console.log(randomNumberCarrozza);
+
+    document.getElementById('ticket-user-number').innerHTML = randomNumberCarrozza;
+
+    // Generare random number tra 90000 e 100000 escluso per il codice treno e stamparlo in ticket-user-code
+    var randomNumberTrain = randomNumber(90000, 100000);
+    console.log(randomNumberTrain);
+
+    document.getElementById('ticket-user-code').innerHTML = randomNumberTrain;
 });
+
+// Funzione RandomNumber
+// Funzione che genera un numero casuale con un minimo e un massimo (il massimo è escluso)
+// 
+// min -> numero intero che rappresenta il minimo numero generabile
+// max -> numero intero che rappresenta il massimo numero generabile (il massimo è escluso)
+// 
+// return: random number tra min e max (max escluso)
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
