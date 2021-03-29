@@ -7,10 +7,10 @@
 // Se clicchiamo su Genera, la sezione col biglietto apparirà e sarà popolata coi dati del biglietto
 // Se clicchiamo su annulla dobbiamo ripulire il form e nascondere la sezione col biglietto.
 
-// Funzioni generateButtonElement
+// Funzioni generateButton
 // Quando si fa click su generate button comprare il div con il biglietto
-var generateButtonElement = document.getElementById('generate-button');
-generateButtonElement.addEventListener('click', function() {
+var generateButton = document.getElementById('generate-button');
+generateButton.addEventListener('click', function() {
     // Far apparire il div quando si fa click
     var ticketVisibleElement = document.getElementById('ticket-visible');
     ticketVisibleElement.className = ticketVisibleElement.classList + ' visible';
@@ -48,7 +48,33 @@ generateButtonElement.addEventListener('click', function() {
     console.log(randomNumberTrain);
 
     document.getElementById('ticket-user-code').innerHTML = randomNumberTrain;
+
+    // Prendere i km dalla value dell'input ticket-generator-km trasformarli in numero, calcolare il prezzo e stamparlo in ticket-user-price
+    var ticketGeneratorKmElement = document.getElementById('ticket-generator-km');
+    var userKm = ticketGeneratorKmElement.value;
+    console.log(userKm);
+
 });
+
+// Funzioni cancelButton
+// Quando si fa click su cancelButton il div scompare e si resettano i valori del form
+var cancelButton = document.getElementById('cancel-button');
+cancelButton.addEventListener( 'click', function() {
+    // Far sparire il div quando si fa click
+    var ticketVisibleElement = document.getElementById('ticket-visible');
+    ticketVisibleElement.className = ticketVisibleElement.classList + ' invisible';
+
+    // Resettare i valori del form quando si fa click
+    var ticketGeneratorNameElement = document.getElementById('ticket-generator-name');
+    ticketGeneratorNameElement.value = '';
+
+    var ticketGeneratorAgeElement = document.getElementById('ticket-generator-age');
+    ticketGeneratorAgeElement.value = '' ;
+
+    var ticketGeneratorKmElement = document.getElementById('ticket-generator-km');
+    ticketGeneratorKmElement.value = '' ;
+} );
+
 
 // Funzione RandomNumber
 // Funzione che genera un numero casuale con un minimo e un massimo (il massimo è escluso)
