@@ -58,8 +58,8 @@ h2{
     width: 80%;
     margin: auto;
     padding: 20px;
-    visibility: hidden;
 }
+
 .visible{
     visibility: visible;
 }

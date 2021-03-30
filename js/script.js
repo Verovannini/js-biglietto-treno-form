@@ -10,10 +10,8 @@
 // Funzioni generateButton
 // Quando si fa click su generate button compare il div con il biglietto
 var generateButton = document.getElementById('generate-button');
+
 generateButton.addEventListener('click', function() {
-    // Far apparire il div quando si fa click
-    var ticketVisibleElement = document.getElementById('ticket-visible');
-    ticketVisibleElement.className = ticketVisibleElement.classList + ' visible';
 
     // Prendere il nome dalla value dell'input ticket-generator-name e stamparla in ticket-user-name
     var ticketGeneratorNameElement = document.getElementById('ticket-generator-name');
@@ -58,25 +56,23 @@ generateButton.addEventListener('click', function() {
     }
 
     document.getElementById('ticket-user-price').innerHTML = ticketPrice.toFixed(2) + '€';
+
+    // Far apparire il div quando si fa click
+    document.getElementById('ticket-visible').className = 'visible';
 });
 
 // Funzioni cancelButton
 // Quando si fa click su cancelButton il div scompare e si resettano i valori del form
 var cancelButton = document.getElementById('cancel-button');
+
 cancelButton.addEventListener( 'click', function() {
     // Far sparire il div quando si fa click
-    var ticketVisibleElement = document.getElementById('ticket-visible');
-    ticketVisibleElement.className = ticketVisibleElement.classList + ' invisible';
+    document.getElementById('ticket-visible').className = 'invisible';
 
     // Resettare i valori del form quando si fa click
-    var ticketGeneratorNameElement = document.getElementById('ticket-generator-name');
-    ticketGeneratorNameElement.value = '';
-
-    var ticketGeneratorAgeElement = document.getElementById('ticket-generator-age');
-    ticketGeneratorAgeElement.value = '' ;
-
-    var ticketGeneratorKmElement = document.getElementById('ticket-generator-km');
-    ticketGeneratorKmElement.value = '' ;
+    document.getElementById('ticket-generator-name').value = '';
+    document.getElementById('ticket-generator-age').value = '' ;
+    document.getElementById('ticket-generator-km').value = '' ;
 } );
 
 
@@ -89,4 +85,4 @@ cancelButton.addEventListener( 'click', function() {
 // return: random number tra min e max (max escluso)
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
-  }
+}
